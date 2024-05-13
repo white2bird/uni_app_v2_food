@@ -1,0 +1,1 @@
+<view class="content data-v-ed48b289"><image class="center-image data-v-ed48b289" src="http://localhost:8080/static/static_music_player.png" mode="aspectFit"></image><le-audio wx:if="{{a}}" class="data-v-ed48b289" u-i="ed48b289-0" bind:__l="__l" u-p="{{a}}"></le-audio></view>

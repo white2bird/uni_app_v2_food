@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "unicorn-plugin-table": "../unicorn-plugin-table/unicorn-plugin-table"
+  }
+}

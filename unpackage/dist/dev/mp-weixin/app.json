@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/My/My",
+    "pages/Videos/Videos",
+    "pages/Voices/Voices",
+    "pages/unicorn-ext/unicorn-ext",
+    "pages/Pic/Pic"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/index.png",
+        "selectedIconPath": "static/index.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/My/My",
+        "iconPath": "static/my.png",
+        "selectedIconPath": "static/my.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}

@@ -1,0 +1,51 @@
+{
+	"pages": [
+		{
+			"path": "pages/unicorn-base/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}
+	    ,{
+            "path" : "pages/unicorn-base/about",
+            "style" : {
+				"navigationStyle": "custom"
+			}
+        }
+        ,{
+            "path" : "pages/unicorn-base/me",
+            "style" : {
+				"navigationBarTitleText":"关于我们"
+			}
+        },{
+			"path" : "pages/unicorn-ext/unicorn-ext",
+			"style" : {
+				"navigationStyle": "custom"
+			}
+		}
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "元咏插件库",
+		"navigationBarBackgroundColor": "#0152D9",
+		"backgroundColor": "#0152D9"
+	},
+	"tabBar": {
+		"selectedColor": "#0152D9",
+		"color":"#aaaaaa",
+		"list": [
+			{
+				"pagePath": "pages/unicorn-base/index",
+				"iconPath": "/static/unicorn-base/tabbar/basics.png",
+				"selectedIconPath": "/static/unicorn-base/tabbar/basics_cur.png",
+				"text": "插件市场"
+			},
+			{
+				"pagePath": "pages/unicorn-base/about",
+				"iconPath": "/static/unicorn-base/tabbar/about.png",
+				"selectedIconPath": "/static/unicorn-base/tabbar/about_cur.png",
+				"text": "我的"
+			}
+		]
+	}
+}

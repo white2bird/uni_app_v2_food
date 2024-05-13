@@ -1,0 +1,1 @@
+<view><view class="list-box"><view wx:for="{{a}}" wx:for-item="item" wx:key="c" class="{{[item.d && 'active']}}" data-index="{{item.e}}" bindtap="{{item.f}}"><image src="{{item.a}}" mode="aspectFill" lazy-load="true"></image><view>{{item.b}}</view></view></view><view class="load">{{b}}</view></view>

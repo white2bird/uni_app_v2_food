@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "播音",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "unicorn-page-shop-jd": "../../components/unicorn-page-shop-jd/unicorn-page-shop-jd",
+    "unicorn-page-order": "../../components/unicorn-page-order/unicorn-page-order",
+    "unicorn-page-video-slide": "../../components/unicorn-page-video-slide/unicorn-page-video-slide"
+  }
+}
