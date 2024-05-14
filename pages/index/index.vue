@@ -8,7 +8,7 @@
 					indicator-color="rgba(0, 0, 0, 0.4)" indicator-active-color="#FFFFFF">
 					<!-- v-for循环遍历数组 -->
 					<swiper-item v-for="(item,index) in swipers">
-						<image :src="item.image" class="images w100 br10" style="background-size: cover; width: 100%;">
+						<image :src="item.image" class="images w100 br10" style="background-size: cover;">
 						</image>
 					</swiper-item>
 				</swiper>
@@ -17,7 +17,7 @@
 			<view class="recommend" style="margin-top: 20rpx;">
 				<TnNoticeBar :data="noticeData" left-icon="sound" left-icon-color="tn-grey" />
 				<TnTabbar v-model="currentTabbar">
-					<TnTabbarItem v-for="(item, index) in tabbarData" :key="index" :icon="item.icon"
+					<TnTabbarItem v-for="(item, index) in tabbarData" :key="index" :icon="item.icon" class="tabbar-item"
 						:active-icon="item.activeIcon" :text="item.name" @click="recommendClick(index)"/>
 				</TnTabbar>
 			</view>
@@ -52,9 +52,9 @@
 			name: 'loss',
 			color: 'red',
 			cuIcon: 'myfill',
-			path: '/pages/Voices/Voices',
+			path: '/pages/MenuMain/MenuMain',
 			extName: 'unicorn-page-order',
-			url: '/pages/Pic/Pic'
+			url: '/pages/MenuMain/MenuMain?type=4'
 		},
 		{
 			title: '增重',
@@ -63,16 +63,25 @@
 			cuIcon: 'emojifill',
 			path: '/pages/Voices/Voices',
 			extName: 'unicorn-page-order',
-			url: '/pages/Pic/Pic'
+			url: '/pages/MenuMain/MenuMain?type=9'
 		},
 		{
-			title: '正常',
+			title: '家常菜',
 			name: 'Normal',
 			color: 'green',
 			cuIcon: 'time',
 			path: '/pages/Voices/Voices',
 			extName: 'unicorn-page-order',
-			url: '/pages/Pic/Pic'
+			url: '/pages/MenuMain/MenuMain?type=5'
+		},
+		{
+			title: '全部',
+			name: 'All',
+			color: 'orange',
+			cuIcon: 'musicfill',
+			path: '/pages/Voices/Voices',
+			extName: 'unicorn-page-order',
+			url: '/pages/MenuMain/MenuMain'
 		}
 	])
 	const swipers = [{
@@ -114,7 +123,8 @@
 	@import url("/colorui/main.css");
 	@import url("/colorui/animation.css");
 	@import url("/colorui/components/unicorn-custom-style.css");
-
+	
+	
 	page {
 		background-color: #FFFFFF;
 	}

@@ -13,12 +13,12 @@
 			:scroll-into-view="'left_' + right_selectIndex" scroll-with-animation>
 			<block v-for="(item, index) in dataArr" :key="index">
 				<view :ref="'left_' + index" class="right_item " :id="'left_' + index">
-					<text class="right_item_title ">我是分类->{{ item.name }}</text>
+					<text class="right_item_title ">分类: {{ item.name }}</text>
 					<view class="right_item_view">
 						<view class="item" v-for="(subitem, subindex) in item.subArr" :key="subindex"
 							@click="rightTap(item,subitem)">
 							<image :src="subitem.img" :style="{ width: '100%', height: subItemW + 'px' }"></image>
-							<text>{{ subitem.name }}</text>
+							<span  class="tabbar-item">{{ subitem.name }}</span >
 						</view>
 					</view>
 				</view>
@@ -28,8 +28,15 @@
 	</view>
 </template>
 <script>
-	import testdata from './testdata.js';
+	import { getCurrentInstance,ref, reactive,onMounted } from 'vue';
 	export default {
+		setup(){
+			const current = getCurrentInstance();
+			const { $request } = current.appContext.config.globalProperties;
+			return {
+				$request
+			}
+		},
 		data() {
 			return {
 				left_scrolly: 0,
@@ -41,11 +48,23 @@
 				ttscrollH: 0, //总高度
 				placeholderH: 0, //占位高度
 				heighArr: [],
-				dataArr: testdata,
-				leftdance: 0 //左侧 scrool 位移  保持居中
+				dataArr: [],
+				leftdance: 0, //左侧 scrool 位移  保持居中
+				type: 0
 			};
 		},
-		onLoad() {
+		onLoad(option) {
+			this.type = option.type
+			var url = '/foodMenu/search';
+			if(this.type != undefined){
+				url = url + '?menuType='+this.type
+			}
+			this.$request({
+				url: url,
+				method: 'GET'
+			}).then(res=>{
+				this.dataArr = res.data
+			})
 			let self = this;
 			setTimeout(function() {
 				self.computerH();
@@ -92,10 +111,14 @@
 			},
 			// 右边点击
 			rightTap: function(item, subitem) {
-				uni.showModal({
-					title: `一级:${item.name}\n二级:${subitem.name}`,
-					showCancel: false
-				});
+				console.log(subitem.id)
+				uni.navigateTo({
+					url:'/pages/MenuDetail/MenuDetail?id='+subitem.id
+				})
+				// uni.showModal({
+				// 	title: `一级:${item.name}\n二级:${subitem.name}`,
+				// 	showCancel: false
+				// });
 			},
 			rightScroll: function(e) {
 				let scrollH = e.detail.scrollTop + 30;
@@ -143,6 +166,14 @@
 <style lang="scss">
 	* {
 		box-sizing: border-box;
+	}
+	
+	.tabbar-item {
+	  display: inline-block;
+	  white-space: nowrap;
+	  width: 100rpx;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
 	}
 
 	.page {
