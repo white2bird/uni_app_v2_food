@@ -4,11 +4,11 @@
 			<!-- 	<image src="/static/unicorn-ext/product.jpg"
 			 mode="widthFix" class="response"></image> -->
 			<view class="uni-margin-wrap">
-				<swiper :circular="true" :autoplay="true" :interval="10000" :duration="1000" :indicator-dots="true"
+				<swiper :circular="true" :autoplay="true" :interval="4000" :duration="1000" :indicator-dots="true"
 					indicator-color="rgba(0, 0, 0, 0.4)" indicator-active-color="#FFFFFF">
 					<!-- v-for循环遍历数组 -->
 					<swiper-item v-for="(item,index) in swipers">
-						<image :src="item.image" class="images w100 br10" style="background-size: cover;">
+						<image :src="item.img" class="images w100 br10" style="background-size: cover;" @click="imgclick(item)">
 						</image>
 					</swiper-item>
 				</swiper>
@@ -18,7 +18,7 @@
 				<TnNoticeBar :data="noticeData" left-icon="sound" left-icon-color="tn-grey" />
 				<TnTabbar v-model="currentTabbar">
 					<TnTabbarItem v-for="(item, index) in tabbarData" :key="index" :icon="item.icon" class="tabbar-item"
-						:active-icon="item.activeIcon" :text="item.name" @click="recommendClick(index)"/>
+						:active-icon="item.activeIcon" :text="item.name" @click="recommendClick(item)"/>
 				</TnTabbar>
 			</view>
 			<view class="nav-list" style="margin-top: 50rpx;">
@@ -40,13 +40,14 @@
 </template>
 
 <script setup>
+	import { getCurrentInstance,ref, reactive } from 'vue';
+	
 	import TnTabbar from '@/uni_modules/tuniaoui-vue3/components/tabbar/src/tabbar.vue'
 	import TnTabbarItem from '@/uni_modules/tuniaoui-vue3/components/tabbar/src/tabbar-item.vue'
 	import TnNoticeBar from '@/uni_modules/tuniaoui-vue3/components/notice-bar/src/notice-bar.vue'
-	import {
-		ref,
-		reactive
-	} from 'vue'
+
+	const instance = getCurrentInstance();
+	const { $request } = instance.appContext.config.globalProperties;
 	const elements = reactive([{
 			title: '减脂',
 			name: 'loss',
@@ -84,38 +85,52 @@
 			url: '/pages/MenuMain/MenuMain'
 		}
 	])
-	const swipers = [{
-		image: '/static/unicorn-ext/product.jpg'
-	}, {
-		image: '/static/unicorn-ext/product.jpg'
-	}]
+	const swipers = ref([])
 	const tabbarData = reactive([{
 			name: '早餐',
 			icon: 'home',
 			activeIcon: 'home-fill',
+			type: 1
 		},
 		{
-			name: '中餐',
+			name: '下午茶',
 			icon: 'ticket',
 			activeIcon: 'ticket-fill',
+			type: 7
 		},
 		{
-			name: '晚餐',
+			name: '夜宵',
 			icon: 'shop',
 			activeIcon: 'shop-fill',
+			type: 9
 		}
 	])
 	const currentTabbar = ref(0)
 	const noticeData = [
-		'每日三餐推荐'
+		'每日推荐'
 	]
 	
-	const recommendClick = (index)=>{
-		console.log('click,', index)
+	const recommendClick = (item)=>{
+		console.log('click,', item)
 		uni.navigateTo({
-			url:'/pages/MenuMain/MenuMain'
+			url:'/pages/Recommend/Recommend?id='+item.type
 		})
 	}
+	
+	const getBanner = ()=>{
+		$request({
+			url:'/foodMenu/getBanner',
+			method:'GET'
+		}).then(res=>{
+			swipers.value = res.data
+		})
+	}
+	const imgclick = (item)=>{
+		uni.navigateTo({
+			url:'/pages/MenuDetail/MenuDetail?id='+item.id
+		})
+	}
+	getBanner()
 </script>
 
 <style>

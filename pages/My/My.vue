@@ -8,7 +8,7 @@
 			<view class="info" style="margin-top: 20rpx;">
 				<view class="item" @click="login">
 					<!-- <text>12</text> -->
-					<text>登录</text>
+					<text>{{denglu}}</text>
 				</view>
 				<view class="item" @click="register">
 					<!-- <text>43</text> -->
@@ -34,6 +34,7 @@
 	 		onLoad,
 	 		onShow
 	 	} from "@dcloudio/uni-app";
+	const denglu = ref('登录')
 	const instance = getCurrentInstance();
 	const { $request } = instance.appContext.config.globalProperties;
 	const menus = ref([
@@ -67,17 +68,13 @@
 					uni.setStorageSync("token", "")
 					uni.setStorageSync("username", "")
 					name.name = ''
+					denglu.value = '登录'
 				}
 			})
 		}
 		if(id === 2){
-			$request({
-				url:'/run',
-				method: 'GET'
-			})
-			uni.showToast({
-				icon:"success",
-				title:"正在运行，请前往主页查询结果"
+			uni.navigateTo({
+				url: '/pages/UserStore/UserStore'
 			})
 		}
 		if(id === 3){

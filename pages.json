@@ -90,7 +90,7 @@
 			"path" : "pages/Order/Order",
 			"style" : 
 			{
-				"navigationBarTitleText" : "",
+				"navigationBarTitleText" : "订单",
 				"enablePullDownRefresh" : false
 			}
 		},
@@ -106,10 +106,35 @@
 			"path" : "pages/MenuDetail/MenuDetail",
 			"style" : 
 			{
-				"navigationBarTitleText" : "",
+				"navigationBarTitleText" : "菜谱详情",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/UserStore/UserStore",
+			"style" : 
+			{
+				"navigationBarTitleText" : "收藏",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/Recommend/Recommend",
+			"style" : 
+			{
+				"navigationBarTitleText" : "推荐",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/MenuClass/MenuClass",
+			"style" : 
+			{
+				"navigationBarTitleText" : "分类",
 				"enablePullDownRefresh" : false
 			}
 		}
+	
 		
 
 	],
@@ -124,7 +149,14 @@
 			"iconPath": "static/index.png",
 			"selectedIconPath": "static/index.png",
 			"text": "首页"
-		}, {
+		},
+		{
+			"pagePath": "pages/MenuClass/MenuClass",
+			"iconPath": "static/index.png",
+			"selectedIconPath": "static/uniapp_info.png",
+			"text": "分类"
+		},
+		{
 			"pagePath": "pages/My/My",
 			"iconPath": "static/my.png",
 			"selectedIconPath": "static/my.png",

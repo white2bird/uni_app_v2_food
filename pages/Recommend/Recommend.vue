@@ -33,10 +33,12 @@
 		},
 		mounted(){
 			this.$request({
-				url:'/foodMenu/detail/'+this.id,
+				url:'/foodMenu/recommend/'+this.id,
 				method: 'GET'
 			}).then(res=>{
-				this.recipe = res.data
+				if(res.data != null){
+					this.recipe = res.data
+				}
 			})
 		},
 		

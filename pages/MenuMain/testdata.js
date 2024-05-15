@@ -1,5 +1,5 @@
 export default [{
-	name: '茶叶',
+	name: '减脂',
 	subArr: [{
 		img: '/static/logo.png',
 		name: '红茶'
@@ -17,7 +17,7 @@ export default [{
 		name: '红茶'
 	}]
 }, {
-	name: '服装',
+	name: '增重',
 	subArr: [{
 		img: '/static/logo.png',
 		name: '红茶'
@@ -26,7 +26,7 @@ export default [{
 		name: '红茶'
 	}]
 }, {
-	name: '服装2',
+	name: '正常',
 	subArr: [{
 		img: '/static/logo.png',
 		name: '红茶2'
@@ -35,7 +35,7 @@ export default [{
 		name: '红茶2'
 	}]
 }, {
-	name: '水果1',
+	name: '湘菜',
 	subArr: [{
 		img: '/static/logo.png',
 		name: '水果2'
@@ -77,7 +77,7 @@ export default [{
 		name: '水果2'
 	}]
 }, {
-	name: '分类1',
+	name: '川菜',
 	subArr: [{
 		img: '/static/logo.png',
 		name: '悲剧2'
@@ -86,7 +86,7 @@ export default [{
 		name: '悲剧2'
 	}]
 }, {
-	name: '分类2',
+	name: '粤菜',
 	subArr: [{
 		img: '/static/logo.png',
 		name: '红茶'
@@ -104,7 +104,7 @@ export default [{
 		name: '红茶'
 	}]
 }, {
-	name: '水果3',
+	name: '京菜',
 	subArr: [{
 		img: '/static/logo.png',
 		name: '水果2'
@@ -145,103 +145,5 @@ export default [{
 		img: '/static/logo.png',
 		name: '水果2'
 	}]
-}, {
-	name: '分类15',
-	subArr: [{
-		img: '/static/logo.png',
-		name: '悲剧2'
-	}, {
-		img: '/static/logo.png',
-		name: '悲剧2'
-	}]
-}, {
-	name: '茶叶5',
-	subArr: [{
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}]
-}, {
-	name: '茶叶7',
-	subArr: [{
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}]
-}, {
-	name: '茶叶6',
-	subArr: [{
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}]
-}, {
-	name: '茶叶7',
-	subArr: [{
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}]
-}, {
-	name: '茶叶8',
-	subArr: [{
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}, {
-		img: '/static/logo.png',
-		name: '红茶'
-	}]
+
 }]
