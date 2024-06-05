@@ -38,6 +38,7 @@
 			}).then(res=>{
 				if(res.data != null){
 					this.recipe = res.data
+					this.foodId = res.data.id;
 				}
 			})
 		},
@@ -51,7 +52,8 @@
 					like: 0,
 					stepList: []
 				},
-				id: 0
+				id: 0,
+				foodId: 0
 			};
 		},
 		methods: {
@@ -66,7 +68,7 @@
 					method: 'POST',
 					data:{
 						like: this.recipe.like,
-						foodMenuId: this.id
+						foodMenuId: this.foodId
 					}
 				}).then(res=>{
 					
